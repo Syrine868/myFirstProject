@@ -1,0 +1,26 @@
+<p>form-film works!</p>
+<form #f="ngForm">
+    <label>Nom : </label> <input type="text" name="nom" [(ngModel)]="film.nom" #nom="ngModel" required minlength="3"/>
+   <!-- <div *ngIf="nom.invalid && nom.touched">Title est obligatoire</div>-->
+   <div *ngIf="nom.invalid">
+   <div *ngIf=" nom.touched && nom.errors?.required">Title obligatoire</div>
+    <div *ngIf="nom.errors?.minlength">Min length = 3</div>
+    </div>
+
+
+<label>Duree : </label>
+<input type=" number" name="duree" [(ngModel)]="film.duree" #duree ="ngModel" required pattern="[1-9][0-9]*">
+<div *ngIf="duree.invalid">
+
+<div *ngIf="duree.touched && duree.errors?.required ">Duree obligatoire </div>
+<div *ngIf="duree.errors.pattern   "> Duree superieur </div>
+</div>
+
+<div>
+    <label>Categorie: </label>
+    <input type="text" name="cat" [(ngModel)]="film.categorie" #cat ="ngModel" required >
+<div *ngIf="cat.touched && cat.invalid ">Categorie obligatoire </div></div>
+<button [disabled]="f.invalid" (click)="save()">Save</button>
+</form>
+
+{{nom.touched}} |---| {{nom.pristine}} |---| {{nom.valid}} |--Form--|{{f.valid}}

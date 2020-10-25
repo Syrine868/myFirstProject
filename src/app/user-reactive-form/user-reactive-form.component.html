@@ -1,0 +1,48 @@
+
+            <fieldset>
+                <legend>User Reactive Form</legend>
+                <form  [formGroup]="user_group">
+
+            Nom:
+            <input  formControlName="nom" name="nom"  type="text">
+            <div *ngIf="nom.invalid">   
+                <div *ngIf="nom.touched">
+                    <p >Field required</p>   
+                </div>
+                      
+               <div *ngIf="nom.errors?.minlength">
+                   <p >MinLength 3 chars</p>
+              </div>
+          
+              </div>
+            <br>
+            Email:
+            <input  formControlName="email" name="email" type="text">
+            <div *ngIf="email.invalid">
+                <div *ngIf="email.touched" >
+                    <p >Field required</p>
+                </div>
+                <div *ngIf="email.errors?.pattern">
+                    <p >Email Incorrect</p>
+                </div>
+            </div>
+        <br>
+
+
+            Cin :
+         <input  formControlName="cin" name="cin" type="text">
+            <div *ngIf="cin.invalid">
+
+                <div *ngIf="cin.touched ">
+                    <p >Field required</p>
+                </div>
+                <div *ngIf="cin.errors?.pattern">
+                    <p >Cin Incorrect</p>
+                </div>
+            </div>
+            <br>
+            <button [disabled]="user_group.invalid">Save</button>
+        </form>      
+  </fieldset>
+
+   

@@ -1,0 +1,46 @@
+<form #form_info_gen="ngForm">
+    <fieldset>
+        <legend>Informations générales</legend>
+        <label>Nom</label>
+        <input type="text" name="nom" ngModel #nom="ngModel"/>
+        <div *ngIf="nom.invalid">
+            <p>Field is required</p>
+        </div>
+        <br>
+        <label>Email</label>       
+        <input type="email" name="email" ngModel #email="ngModel" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required/>
+        <div *ngIf="email.invalid">
+            <p>Field is required</p>
+        </div>
+        <form #form_info_pay="ngForm">
+            <fieldset>
+                <legend>Informations de paiement</legend>
+                <label>Type de carte</label>
+                <input type="text" name="type_c" ngModel #type_c="ngModel" required/>
+                <div *ngIf="type_c.invalid">
+                    <p>Field is required</p>
+                </div>
+                <br>
+                <label>Num carte</label>       
+                <input type="text" name="num_c" ngModel #num_c="ngModel" minlength="16" maxlength="16" required/>
+                <div *ngIf="num_c.invalid">
+                    <div *ngIf="num_c.errors?.minlength && num_c.errors?.maxlength">
+                        <p>Field is required</p>
+                        <p>num_c must contain 16 numbers</p>
+                    </div>
+                   
+                </div>
+                <br>
+                <label>Date Expiration</label>
+                <input type="date" name="date_exp" ngModel #date_exp="ngModel"/>
+                <div *ngIf="date_exp.invalid">
+                    <p>Field is required</p>
+                </div>
+                <br>
+                <label>Code</label>       
+                <input [hidden]="form_info_pay.invalid" type="text" name="code"/>
+            </fieldset>
+        </form>
+        <button [disabled]="form_info_gen.invalid">Ajouter</button>
+    </fieldset>
+</form>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <head rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+</head>
+
+<body>
+ <!--   <h1>Atelier 3</h1>
+    <app-form-film (newfilm)="addFilm($event)"></app-form-film>
+   
+
+    <br>
+    <div class="list-group-item list-group-item-light">
+        <h1 class="display-4">Liste des Films</h1>
+    </div>
+    <hr>
+    <ul class="list-group">
+        <li *ngFor="let a of listFilms; let index = index ; ">
+            <!--  <p [hidden]="a.duree >= 5 " class="list-group-item list-group-item-info"> Nom : {{ a.nom }} || Durée : {{a.duree}} || Catégorie : {{a.categorie}} </p> -->
+            <!--   <p *ngIf="a.duree == 2 " [ngStyle]="{'color': 'blue'}"  class="list-group-item list-group-item-info">
+            Nom : {{ a.nom }} || Durée : {{a.duree}} || Catégorie : {{a.categorie}}
+         </p>
+            <p class="list-group-item list-group-item-info"> Nom : {{ a.nom }} || Durée : {{a.duree}} || Catégorie : {{a.categorie}} </p>
+
+
+
+                <p  [ngStyle]="{'font-size': '24px'}"  class="list-group-item list-group-item-info">
+                 Nom : {{ a.nom }} || Durée : {{a.duree}} || Catégorie : {{a.categorie}}
+             </p>
+          <p  [ngStyle]="{'font-size': '30px'}"  class="list-group-item list-group-item-warning">
+             Nom : {{ a.nom }} || Durée : {{a.duree}} || Catégorie : {{a.categorie}}
+          </p>
+
+        </li>
+        <input type="text" [(ngModel)]="i" name="i" />
+        <button [disabled]="i" class="btn btn-primary" (click)="calculer(i)">Calculer</button>
+
+        <p> {{resultat}} </p>
+    </ul>
+
+    <app-product *ngFor="let f of listFilms; let i =index " [product]="f" (calculer)="calcul2($event)"></app-product>
+
+-->
+    <app-reactive-form-film></app-reactive-form-film>
+</body>
+
+</html>

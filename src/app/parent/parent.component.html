@@ -1,0 +1,9 @@
+<p>parent works!</p>
+
+
+<app-fils [color]="msg" (deleteColor)="DeleteColor($event)"> 
+</app-fils>
+<input
+       type="text"
+       [(ngModel)]="msg"
+       placeholder="Insert Your color"/>
