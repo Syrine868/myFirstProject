@@ -1,0 +1,33 @@
+<h1>User Form</h1>
+<form #f= "ngForm" (ngSubmit)="update()">
+    <label>Nom</label>
+    <input type="text" placeholder="nom"  [(ngModel)]="u.name" #nom="ngModel" minlength="3" name="name"/> 
+    <div *ngIf="nom.errors?.minlength">
+        <p>Le nom doit contenir au moins 3 caractéres </p>
+    </div>   <br>
+    <br>
+
+    <label>Username</label>
+    <input type="text" placeholder="nom"  [(ngModel)]="u.username" value="u.username" #nom="ngModel" minlength="3" name="username"/>
+    <div *ngIf="nom.errors?.minlength">
+        <p>Le nom doit contenir au moins 3 caractéres </p>
+    </div>
+    <br>
+    <br>
+    <label>Email</label>
+    <input type="text" placeholder="email" [(ngModel)]="u.email" #email="ngModel" required name="email"/>
+    <div *ngIf="email.errors?.required">
+        <p>Email Obligatoire</p>
+    </div>
+   <br>   <br>
+
+    <label>ID</label>
+    <input disabled type="text" placeholder="cin" [(ngModel)]="u.id" #cin="ngModel" required minlength="8" maxlength="8" name="id"/>
+   <div *ngIf="cin.invalid">
+       <div *ngIf="cin.errors?.minlength && cin.errors?.maxlength && cin.errors?.required">
+            <p>cin obligatoire && doit contenir 8 caractéres </p>
+       </div>
+   </div>   <br>
+       <button  type="submit">Sauvegarder les modifications</button>
+</form>
+

@@ -16,7 +16,17 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormFilmComponent } from './reactive-form-film/reactive-form-film.component';
 import { UserReactiveFormComponent } from './user-reactive-form/user-reactive-form.component';
-
+import { ModelDrivenFormComponent } from './model-driven-form/model-driven-form.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { HomeComponent } from './home/home.component';
+import { SallesListComponent } from './salles-list/salles-list.component';
+import { SalleComponent } from './salle/salle.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import { HttpClientModule} from '@angular/common/http';
+import { AddUserComponent } from './add-user/add-user.component';
+import { UpdateComponent } from './update/update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,14 +43,25 @@ import { UserReactiveFormComponent } from './user-reactive-form/user-reactive-fo
     TemplateDrivenFormComponent,
     ReactiveFormFilmComponent,
     UserReactiveFormComponent,
+    ModelDrivenFormComponent,
+    ContactsComponent,
+    HomeComponent,
+    SallesListComponent,
+    SalleComponent,
+    NotFoundComponent,
+    TodoListComponent,
+    UtilisateurComponent,
+    AddUserComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [UserReactiveFormComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

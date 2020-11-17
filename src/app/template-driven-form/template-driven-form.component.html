@@ -12,6 +12,9 @@
         <div *ngIf="email.invalid">
             <p>Field is required</p>
         </div>
+        <div *ngIf="email.errors?.pattern">
+            <p>Field is required</p>
+        </div>
         <form #form_info_pay="ngForm">
             <fieldset>
                 <legend>Informations de paiement</legend>

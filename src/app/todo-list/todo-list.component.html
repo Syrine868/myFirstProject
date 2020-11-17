@@ -1,0 +1,17 @@
+<h1>ToDo List</h1>
+<ul>
+    <li *ngFor="let i of listTodo">
+            {{i.userId}}--
+            {{i.id}}--
+            {{i.title}} --
+            {{i.completed}}
+
+   
+</li>       
+<button type="button" (click)="calcul(i)">Calculer</button> || 
+<p>{{res}}</p>
+<p>Nombre : {{j}}</p>
+
+<button type="button" (click)="getTodo()">Voir Liste TODOS</button>
+
+</ul>

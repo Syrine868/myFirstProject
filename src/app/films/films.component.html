@@ -14,7 +14,7 @@
 </head>
 
 <body>
- <!--   <h1>Atelier 3</h1>
+    <h1>Atelier 3</h1>
     <app-form-film (newfilm)="addFilm($event)"></app-form-film>
    
 
@@ -26,7 +26,7 @@
     <ul class="list-group">
         <li *ngFor="let a of listFilms; let index = index ; ">
             <!--  <p [hidden]="a.duree >= 5 " class="list-group-item list-group-item-info"> Nom : {{ a.nom }} || Durée : {{a.duree}} || Catégorie : {{a.categorie}} </p> -->
-            <!--   <p *ngIf="a.duree == 2 " [ngStyle]="{'color': 'blue'}"  class="list-group-item list-group-item-info">
+              <p *ngIf="a.duree == 2 " [ngStyle]="{'color': 'blue'}"  class="list-group-item list-group-item-info">
             Nom : {{ a.nom }} || Durée : {{a.duree}} || Catégorie : {{a.categorie}}
          </p>
             <p class="list-group-item list-group-item-info"> Nom : {{ a.nom }} || Durée : {{a.duree}} || Catégorie : {{a.categorie}} </p>
@@ -49,7 +49,7 @@
 
     <app-product *ngFor="let f of listFilms; let i =index " [product]="f" (calculer)="calcul2($event)"></app-product>
 
--->
+
     <app-reactive-form-film></app-reactive-form-film>
 </body>
 

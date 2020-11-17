@@ -1,10 +1,10 @@
 
             <fieldset>
                 <legend>User Reactive Form</legend>
-                <form  [formGroup]="user_group">
+                <form  [formGroup]="user_group" >
 
             Nom:
-            <input  formControlName="nom" name="nom"  type="text">
+            <input  formControlName="nom" name="nom" #nom type="text" >
             <div *ngIf="nom.invalid">   
                 <div *ngIf="nom.touched">
                     <p >Field required</p>   
@@ -17,7 +17,7 @@
               </div>
             <br>
             Email:
-            <input  formControlName="email" name="email" type="text">
+            <input  formControlName="email" name="email" #email type="text">
             <div *ngIf="email.invalid">
                 <div *ngIf="email.touched" >
                     <p >Field required</p>
@@ -30,7 +30,7 @@
 
 
             Cin :
-         <input  formControlName="cin" name="cin" type="text">
+         <input  formControlName="cin" name="cin"  type="text">
             <div *ngIf="cin.invalid">
 
                 <div *ngIf="cin.touched ">
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <br>
-            <button [disabled]="user_group.invalid">Save</button>
+            <button [disabled]="user_group.invalid" (click)="save()">Save</button>
         </form>      
   </fieldset>
 

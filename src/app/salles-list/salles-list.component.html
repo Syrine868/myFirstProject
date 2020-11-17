@@ -1,0 +1,10 @@
+<p>salles-list works!</p>
+<ul>
+<li *ngFor="let i of salles">
+{{i.nom}} 
+<a [routerLink]="['/detail',i.id]"> [Detail]</a>
+<a [routerLink]="['/details',i.nom,i.capacite]"> [Details]</a>
+<a [routerLink]="['/notFound']"> [Notfound]</a>
+
+</li>
+</ul>

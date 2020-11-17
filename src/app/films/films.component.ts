@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import Film from '../model/film';
+import { FilmService } from '../services/film.service';
 
 @Component({
   selector: 'app-films',
@@ -8,29 +9,14 @@ import Film from '../model/film';
 })
 export class FilmsComponent implements OnInit , OnChanges{
 
-  listFilms: any = [
-    {
-      nom: 'MANDY', duree: 2 , categorie: 'action',
-    },
-    {
-      nom: 'LOVE-AFTER-LOVE', duree: 3 , categorie: 'drama',
-    },
-    {
-      nom: 'YOU-WERE-NEVER-REALLY-HERE', duree: 2 , categorie: 'drama',
-    },
-    {
-      nom: 'THE-RIDER', duree: 3 , categorie: 'drama',
-    },
-    {
-      nom: 'FIRST-REFORMED', duree: 6 , categorie: 'action',
-    },
-  ];
+  listFilms: any = [];
 
   i: number = 0;
   resultat: string = "";
-  constructor() { }
+  constructor(private sf : FilmService) { }
 
   ngOnInit(): void {
+    this.listFilms = this.sf.getFilms();
     
   }
   calcul2(p: Film) {

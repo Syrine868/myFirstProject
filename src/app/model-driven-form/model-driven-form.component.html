@@ -1,0 +1,54 @@
+
+       <form [formGroup]="form_group1">
+           <fieldset>
+               <legend>Informations Generales</legend>
+        
+         Nom:  <input type="text" name="nom" formControlName="nom" [(ngModel)]="contact.nom"><br>
+         <div *ngIf="nom.invalid && nom.touched">Nom est obligatoire</div><br>
+        
+         Email:  <input type="text" name="email" formControlName="email"[(ngModel)]="contact.email" ><br>
+         <div *ngIf="email.invalid && email.touched">
+                <p >Email invalid</p>
+            </div>
+            
+     
+         <fieldset formGroupName="f">
+             <legend>Informations de paiement</legend>
+                Type carte :  <input type="text" name="typec" formControlName="typec" [(ngModel)]="contact.typec"><br>
+                <div *ngIf="typec.invalid && typec.touched">type obligatoire</div><br>
+               
+                Numéro de carte : <input type="text" name="numc" formControlName="numc" [(ngModel)]="contact.numc"><br>
+                <div *ngIf="numc.errors?.pattern">Numéro de carte ne dépasse pas 16 chiffres</div><br>
+               
+                Date expiration:<input type="date" name="dateexp" formControlName="dateexp" [(ngModel)]="contact.dateexp"><br>
+                <div *ngIf="dateexp.invalid && dateexp.touched">Date obligatoire</div><br>
+               
+                Code: <input type="text" name="code" formControlName="code"  [(ngModel)]="contact.code"><br>
+                <div *ngIf="code.invalid && code.touched">Code obligatoire</div><br>
+
+
+        </fieldset>
+            <button class="btn btn-outline-info" [disabled]="form_group1.invalid"  (click)="save()">Ajouter</button>
+       </fieldset>
+       </form>
+       <table class="">
+        <tr>
+            <th class="">Nom</th>
+            <th class="">Email</th>
+            <th class="">Type carte</th>
+            <th class="">Numéro de carte</th>
+            <th class="">Date expiration</th>
+            <th class="">Code</th>
+            
+        </tr>
+        <tr *ngFor="let i of listContacts">
+            <td>{{i.nom}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.typec}}</td>
+            <td>{{i.numc}}</td>
+            <td>{{i.dateexp}}</td>
+            <td>{{i.code}}</td>
+            
+        </tr>
+    
+    </table>

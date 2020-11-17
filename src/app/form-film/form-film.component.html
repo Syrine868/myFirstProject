@@ -21,6 +21,7 @@
     <input type="text" name="cat" [(ngModel)]="film.categorie" #cat ="ngModel" required >
 <div *ngIf="cat.touched && cat.invalid ">Categorie obligatoire </div></div>
 <button [disabled]="f.invalid" (click)="save()">Save</button>
+
 </form>
 
 {{nom.touched}} |---| {{nom.pristine}} |---| {{nom.valid}} |--Form--|{{f.valid}}

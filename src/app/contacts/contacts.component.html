@@ -1,0 +1,23 @@
+<p>contacts works!</p>
+<app-model-driven-form (addc)="addContact($event)"></app-model-driven-form>
+<table class="">
+    <tr>
+        <th class="">Nom</th>
+        <th class="">Email</th>
+        <th class="">Type carte</th>
+        <th class="">Numéro de carte</th>
+        <th class="">Date expiration</th>
+        <th class="">Code</th>
+        
+    </tr>
+    <tr *ngFor="let i of listContacts">
+        <td>{{i.nom}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.typec}}</td>
+        <td>{{i.numc}}</td>
+        <td>{{i.dateexp}}</td>
+        <td>{{i.code}}</td>
+        
+    </tr>
+
+</table>

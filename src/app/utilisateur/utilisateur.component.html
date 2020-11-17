@@ -1,0 +1,27 @@
+<p>utilisateur works!</p>
+<ul>
+   <!-- <input type="text" name="my_input_text" [(ngModel)]="my_input_text" placeholder="input ..."/>
+    <button (click)="countNbUsersByValue(count_by_value,my_input_text)">Vérifier</button>
+    {{res_by_value}}
+           <a routerLink="/usertodo/{{i.id}}">Voir ToDo</a>
+
+    <button type="button" (click)="getUsers()">Voir list Users</button>
+-->
+<a [routerLink]="[ '/adduser']"> Atelier 10-AddUser </a> |||
+
+    <li *ngFor="let i of listUsers; let index of index">
+            
+        {{i.id}}--
+        {{i.name}}--
+        {{i.username}}--
+        {{i.email}}
+        <a [routerLink]="[ '/updateUser/',i.id]"><button> Atelier 10-Update User </button> </a> --- 
+        <a [routerLink]="[ '/deleteUser/',i.id]"><button (click)="delete(i.id)"> Atelier 10-Delete User </button> </a>
+        
+
+
+    </li>
+
+
+</ul>
+

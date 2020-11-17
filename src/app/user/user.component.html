@@ -21,9 +21,10 @@
 </head>
 
 <body>
-    <app-user-form  (addnewuser)="eventcreateuser($event)"></app-user-form>
+    <app-user-reactive-form (newu)="eventcreateuser($event)" ></app-user-reactive-form>
+  <!--  <app-user-form  (addnewuser)="eventcreateuser($event)"></app-user-form>
 
-    <!--<div class="list-group-item list-group-item-dark">
+    <div class="list-group-item list-group-item-dark">
         <h1 class="display-3">Prosit 2</h1>
     </div>
     <br>
